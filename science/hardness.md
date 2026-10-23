@@ -239,7 +239,7 @@ Appending a fresh independent uniform position label is an efficient randomized 
 
 where $`U_m,U'_m`$ are independent. The two replacement laws preserve the same physical marginal $`(A,J)`$. Adding their bounds proves (H1)–(H2).
 
-This is computational indistinguishability of joint distributions. It does not assert a pointwise statistical bound on the conditional law of $`Z`$ for every realized syndrome. Indeed, the geometric theorem shows that an unrestricted computation can usually identify the true frame from that syndrome.
+This is computational indistinguishability of joint distributions. It does not assert a pointwise statistical bound on the conditional law of $`Z`$ for every realized syndrome. At the benchmark logarithmic syndrome precision, the geometric theorem shows that an unrestricted computation can usually identify the true frame from the syndrome.
 
 ## 6. Operational consequences
 

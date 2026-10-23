@@ -33,9 +33,9 @@ The exact algebra uses the fixed seed `20261023`. Deliberately forced pivot case
 
 The error convention is
 
-$$
+```math
 D_{\mathbb Z,r}(k)\propto\exp[-k^2/(2r^2)].
-$$
+```
 
 The smoothing checks use `(r,R,R2)` equal to `(4,1,1)`, `(4,2,2)`, `(8,2,2)`, and `(8,3,3)`. They include weak enough smoothing to produce a visible nonzero error, as well as cases where the theoretical error falls below ordinary double-precision resolution.
 
