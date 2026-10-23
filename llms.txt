@@ -7,6 +7,8 @@ This repository establishes an ideal-model separation between geometric recovery
 - README.md: principal results, direct reading routes, reproduction and scope.
 - science/index.md: map of the complete scientific account and proof dependencies.
 - science/interpretation.md: physical meaning, charged resources, average-case interpretation and finite-energy/coherent-recovery boundaries.
+- learning/PEIKERT_BRIDGE.md: the single educational anchor, translated conventions, worked examples, and the bridge from Peikert's lattice foundations to the logical-decoding result.
+- learning/MILESTONES.md: the shared 30-milestone understanding map, with 15 background/preliminaries and 15 narrative/innovation targets.
 
 ## Match the question to its authority
 
@@ -19,7 +21,9 @@ This repository establishes an ideal-model separation between geometric recovery
 - Can the input hide unlimited numerical precision? Read science/finite_precision.md; geometry.md G5 gives the finite-precision unrestricted benchmark.
 - What can be inferred about individual bits, lists and postselection? Read the consequences in science/hardness.md.
 - How does this compare with existing GKP and stabilizer-decoding work? Read references/RELATED_WORK.md and references/references.bib.
-- How can a reader build the prerequisites? Follow learning/MILESTONES.md in dependency order.
+- How can a reader build the prerequisites? Use learning/PEIKERT_BRIDGE.md alongside learning/MILESTONES.md in dependency order.
+- Which educational source anchors the project? Chris Peikert, A Decade of Lattice Cryptography (2016), especially sections 2.2, 2.3, and 4.2; see learning/PEIKERT_BRIDGE.md for verified source/version details and notation translation.
+- Where are the GKP concepts and new argument taught? Read the locally supplied explanations in learning/PEIKERT_BRIDGE.md, then follow its links into science/. The selected survey supplies lattice and LWE foundations; it does not contain this project's GKP logical-frame theorem.
 - What finite checks were performed, and how can they be reproduced? Read verification/README.md and run verification/run_all.py. Use verification/expected_results.json as a reference, respecting numerical tolerances.
 
 ## Essential scientific distinctions
