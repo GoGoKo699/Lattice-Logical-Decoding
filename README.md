@@ -8,17 +8,17 @@ The result concerns the logical equivalence class of the correction, accounting 
 
 ## Principal results
 
-Let $m=2n$ be the number of oscillator modes and choose an odd prime $q=\Theta(n^2)$. A uniformly sampled full-rank matrix defines a balanced $q$-ary lattice $L$ and its dual. The stabilizer lattice is $\sqrt2(L\oplus L^*)$.
+Let $`m=2n`$ be the number of oscillator modes and choose an odd prime $`q=\Theta(n^2)`$. A uniformly sampled full-rank matrix defines a balanced $`q`$-ary lattice $`L`$ and its dual. The stabilizer lattice is $`\sqrt2(L\oplus L^*)`$.
 
 | Result | Statement | Authoritative account |
 |---|---|---|
-| Rate and geometry | One encoded qubit per ideal mode; logical distance at least of order $\sqrt n$ with exponentially high probability | [Model](science/model.md), [geometry](science/geometry.md) |
-| Geometric recovery | At Gaussian width $\sigma_n=n^{-1/4}$, an unrestricted decoder succeeds with probability $1-\exp[-\Omega(n)]$ | [Geometry G4–G5](science/geometry.md) |
+| Rate and geometry | One encoded qubit per ideal mode; logical distance at least of order $`\sqrt n`$ with exponentially high probability | [Model](science/model.md), [geometry](science/geometry.md) |
+| Geometric recovery | At Gaussian width $`\sigma_n=n^{-1/4}`$, an unrestricted decoder succeeds with probability $`1-\exp[-\Omega(n)]`$ | [Geometry G4–G5](science/geometry.md) |
 | Computational separation | Under the specified discrete-Gaussian quantum-LWE assumption, the entire logical frame is pseudorandom given the public code and finite syndrome | [Hardness theorem and proof](science/hardness.md) |
 | Strong consequences | Exact decoding and polynomial-size lists succeed only negligibly; each efficiently selected nonzero frame parity is unpredictable beyond random guessing | [Hardness consequences](science/hardness.md) |
 | Finite input | The reduction uses polynomially bounded finite precision; logarithmic precision already supports the geometric benchmark | [Finite precision](science/finite_precision.md), [geometry G5](science/geometry.md) |
 
-In the reference regime, typical displacement norm is $\Theta(n^{1/4})$, while the guaranteed correction radius is $\Omega(n^{1/2})$. The computational obstruction therefore persists increasingly far inside the geometrically correctable region. All probability statements average over the stated public code ensemble and physical noise.
+In the reference regime, typical displacement norm is $`\Theta(n^{1/4})`$, while the guaranteed correction radius is $`\Omega(n^{1/2})`$. The computational obstruction therefore persists increasingly far inside the geometrically correctable region. All probability statements average over the stated public code ensemble and physical noise.
 
 ## Read the science
 
@@ -36,9 +36,11 @@ The analytical core has five parts:
 
 ## Learning route
 
-[The thirty-milestone map](learning/MILESTONES.md) connects oscillator errors, lattice geometry, cryptographic indistinguishability, and the project argument. Its understanding targets are common to all readers. Specialist proofs remain in the scientific pages.
+The single educational anchor is **Chris Peikert, *A Decade of Lattice Cryptography* (2016)**, using the [author's revised survey](https://eprint.iacr.org/2015/939). The [Peikert bridge](learning/PEIKERT_BRIDGE.md) identifies the relevant sections, translates the matrix and Gaussian conventions, and develops the connection from noisy lattice equations to GKP logical corrections through worked examples.
 
-[The LLM reading guide](llms.txt) maps questions to the authoritative definitions and proofs.
+[The thirty-milestone map](learning/MILESTONES.md) gives a common route through the project. Its **15 background/preliminaries milestones** connect oscillator errors, lattice geometry, and cryptographic indistinguishability. Its **15 narrative/innovation milestones** assemble the geometric benchmark, both logical-sector reductions, the finite-precision result, and their physical meaning. Each target has earlier dependencies and pointers to the anchor, bridge, and authoritative scientific account.
+
+Use the bridge alongside the milestone map for self-directed study. [The LLM reading guide](llms.txt) maps questions to these explanations and the specialist proofs.
 
 ## Reproduce the finite checks
 
@@ -48,7 +50,7 @@ From the repository root, run:
 python3 verification/run_all.py
 ```
 
-The suite uses the Python standard library. It checks modular masking, exact primal/dual basis identities, logical labels in original physical coordinates, finite-precision boundaries, and Gaussian-theta formulas. See [verification instructions and expected output](verification/README.md).
+The suite uses Python 3.10 or later and its standard library. It checks modular masking, exact primal/dual basis identities, logical labels in original physical coordinates, finite-precision boundaries, and Gaussian-theta formulas. See [verification instructions and expected output](verification/README.md).
 
 Finite checks support the algebra and implementation. The asymptotic result rests on the analytical proofs and the explicit computational assumption; numerical checks do not establish LWE hardness.
 

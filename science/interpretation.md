@@ -4,9 +4,9 @@ The [geometric theorem](geometry.md) and [computational theorem](hardness.md) ad
 
 ## The central comparison
 
-The code encodes $m=2n$ logical qubits in $m$ ideal oscillator modes. Its stabilizer lattice is built from a random balanced $q$-ary lattice and its Euclidean dual. At displacement width $\sigma_n=n^{-1/4}$, typical errors have norm $\Theta(n^{1/4})$, while a ball of radius $\Omega(n^{1/2})$ is geometrically correctable with overwhelming probability over the code.
+The code encodes $`m=2n`$ logical qubits in $`m`$ ideal oscillator modes. Its stabilizer lattice is built from a random balanced $`q`$-ary lattice and its Euclidean dual. At displacement width $`\sigma_n=n^{-1/4}`$, typical errors have norm $`\Theta(n^{1/4})`$, while a ball of radius $`\Omega(n^{1/2})`$ is geometrically correctable with overwhelming probability over the code.
 
-An unrestricted nearest-point decoder can find the correct logical frame with probability $1-\exp[-\Omega(n)]$. Under the precise quantum-LWE assumption in [the model](model.md), every uniform polynomial-time decoder receiving the public code and finite-precision classical syndrome has negligible exact logical-frame success. Quantum internal processing is included in that statement.
+An unrestricted nearest-point decoder can find the correct logical frame with probability $`1-\exp[-\Omega(n)]`$. Under the precise quantum-LWE assumption in [the model](model.md), every uniform polynomial-time decoder receiving the public code and finite-precision classical syndrome has negligible exact logical-frame success. Quantum internal processing is included in that statement.
 
 The noise is physically small relative to the code's guaranteed correction radius. Its independent width per coordinate also tends to zero. The obstruction is computational: solving the logical task efficiently would distinguish the specified LWE distribution from uniform.
 
@@ -16,13 +16,13 @@ These are asymptotic ensemble statements. They do not establish a useful finite-
 
 Correcting a quantum code does not require reconstructing the original lattice error exactly. Displacements differing by a stabilizer have the same action on the encoded information. A lower bound for finding a full nearest lattice point therefore does not automatically lower-bound the logical task.
 
-Here the relevant quotient is $K/(2K)$. The odd modulus makes the ambient parity map on the underlying integer lattice invertible on its quotient by twice that lattice. A correct logical correction consequently reveals the random mask parity embedded in the LWE challenge. This is the step that connects the actual logical task to the cryptographic assumption.
+Here the relevant quotient is $`K/(2K)`$. The odd modulus makes the ambient parity map on the underlying integer lattice invertible on its quotient by twice that lattice. A correct logical correction consequently reveals the random mask parity embedded in the LWE challenge. This is the step that connects the actual logical task to the cryptographic assumption.
 
-The full-frame theorem is also stronger than a small probability of recovering all bits. Conditioned on the public code and syndrome, the whole $2m$-bit correction label is computationally indistinguishable from independent uniform bits. An efficiently selected nonzero linear parity consequently has negligible prediction advantage. A polynomial-size list and inverse-polynomial-probability postselection do not provide an efficient route around the result.
+The full-frame theorem is also stronger than a small probability of recovering all bits. Conditioned on the public code and syndrome, the whole $`2m`$-bit correction label is computationally indistinguishable from independent uniform bits. An efficiently selected nonzero linear parity consequently has negligible prediction advantage. A polynomial-size list and inverse-polynomial-probability postselection do not provide an efficient route around the result.
 
 ## The label is tied to a specified section
 
-An ideal syndrome identifies the displacement modulo $K$. The canonical basis selects a representative in one fundamental parallelepiped; the remaining integer parity is the logical frame. This convention makes the task mathematically precise.
+An ideal syndrome identifies the displacement modulo $`K`$. The canonical basis selects a representative in one fundamental parallelepiped; the remaining integer parity is the logical frame. This convention makes the task mathematically precise.
 
 Any efficiently computable bijective relabeling of the frame, allowed to depend on the public code and syndrome, preserves its pseudorandomness. In particular, choosing another efficiently computable reference correction adds a known frame and cannot reveal the unknown frame. The conclusion therefore does not depend on calling one fixed frame label zero.
 
@@ -50,7 +50,7 @@ Likewise, a completely general coherent recovery channel need not output a class
 
 The argument is conditional on quantum hardness of a specified ordinary LWE family. The error is a point-mass discrete Gaussian with an explicitly stated width; it must not be silently equated with a rounded continuous Gaussian or with the parameter distribution of a deployed cryptosystem.
 
-For $q=\Theta(n^2)$ and $\sigma_n=n^{-a}$ with $0<a<1/2$, the required LWE error width is $r_n=\Theta(n^{1-a})$. Different physical-noise schedules invoke their corresponding LWE assumptions. This result does not show that hardness at one noise width automatically implies hardness at every smaller width.
+For $`q=\Theta(n^2)`$ and $`\sigma_n=n^{-a}`$ with $`0<a<1/2`$, the required LWE error width is $`r_n=\Theta(n^{1-a})`$. Different physical-noise schedules invoke their corresponding LWE assumptions. This result does not show that hardness at one noise width automatically implies hardness at every smaller width.
 
 No attack on an existing cryptographic deployment follows. The direction of the reduction is that an efficient logical decoder for this public ensemble would contradict the stated LWE assumption.
 

@@ -2,9 +2,9 @@
 
 This project proves a conditional separation between geometric recoverability and efficient logical decoding for an ensemble of ideal oscillator codes. The same public construction supports both sides of the comparison.
 
-The reference regime has $m=2n$ oscillator modes, one encoded qubit per mode, an odd prime modulus $q=\Theta(n^2)$, and independent Gaussian displacement width $\sigma_n=n^{-1/4}$. With an appropriate logarithmic number of syndrome bits per coordinate, an unrestricted geometric decoder succeeds with probability $1-\exp[-\Omega(n)]$. Under the specified discrete-Gaussian quantum-LWE assumption, every uniform polynomial-time syndrome decoder has negligible success in recovering the complete logical frame.
+The reference regime has $`m=2n`$ oscillator modes, one encoded qubit per mode, an odd prime modulus $`q=\Theta(n^2)`$, and independent Gaussian displacement width $`\sigma_n=n^{-1/4}`$. With an appropriate logarithmic number of syndrome bits per coordinate, an unrestricted geometric decoder succeeds with probability $`1-\exp[-\Omega(n)]`$. Under the specified discrete-Gaussian quantum-LWE assumption, every uniform polynomial-time syndrome decoder has negligible success in recovering the complete logical frame.
 
-The computational statement is stronger: the full $2m$-bit frame is computationally indistinguishable from independent uniform bits given the public code and the syndrome. The result includes quantum computation of a classical answer and charged polynomial preprocessing.
+The computational statement is stronger: the full $`2m`$-bit frame is computationally indistinguishable from independent uniform bits given the public code and the syndrome. The result includes quantum computation of a classical answer and charged polynomial preprocessing.
 
 ## Reading routes
 
