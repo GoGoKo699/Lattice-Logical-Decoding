@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "seed": 20261023,
+  "scope": "Finite exact algebra and floating-point identity checks, not evidence of asymptotic hardness.",
+  "masking": {
+    "status": "PASS",
+    "exact_masked_cases": 48000,
+    "uniform_branch_permutations": 21,
+    "enumerated_dual_ensemble_pairs": 400
+  },
+  "bases_frames_and_precision": {
+    "status": "PASS",
+    "exact_basis_instances": 120,
+    "nontrivial_original_coordinate_permutations": 68,
+    "exact_primal_and_dual_parity_vectors": 1200,
+    "exact_position_and_momentum_frame_cases": 240,
+    "quantization_coordinates": 5280,
+    "safe_finite_precision_roundings": 5096,
+    "exact_boundary_coordinates_reported_not_assumed_safe": 184,
+    "adversarial_boundary_crossings": 2,
+    "symplectic_normalization": "Exact: T^T J T=qJ; K^T J K=J/2; Gamma^T J Gamma=2J",
+    "phase_space_covolumes": "Exact: det(S)=1; det(Gamma)=2^m"
+  },
+  "smoothing": {
+    "status": "PASS",
+    "theta_identity_cases": 24,
+    "max_theta_relative_error": 2.2145889750733146e-16,
+    "arithmetic": "IEEE-754 Python floats; Gaussian sums truncated at 9 or 12 widths",
+    "interpretation": "Finite numerical consistency checks; TV quadrature is not a certified integral",
+    "parameter_cases": [
+      {
+        "r": 4.0,
+        "R": 1.0,
+        "R2": 1.0,
+        "discrete_tv_finite_sum": 0.0071919589523495265,
+        "discrete_theta_bound": 0.03152585245692477,
+        "continuous_tv_quadrature": 7.190761852739738e-05,
+        "continuous_theta_bound": 0.031525866888670206,
+        "quadrature_refinement_change": 3.480611176609038e-10,
+        "max_discrete_identity_relative_error": 1.979456505832903e-15,
+        "max_continuous_identity_absolute_error": 4.440892098500626e-16,
+        "mask_parity_bias_direct": 0.014383766634691304,
+        "mask_parity_bias_poisson": 0.014383766634691297
+      },
+      {
+        "r": 4.0,
+        "R": 2.0,
+        "R2": 2.0,
+        "discrete_tv_finite_sum": 5.4815068256654216e-09,
+        "discrete_theta_bound": 3.417455435765128e-08,
+        "continuous_tv_quadrature": 3.686026932148311e-16,
+        "continuous_theta_bound": 3.417455435765128e-08,
+        "quadrature_refinement_change": 2.44985017774239e-19,
+        "max_discrete_identity_relative_error": 3.3143106038746654e-15,
+        "max_continuous_identity_absolute_error": 6.661338147750939e-16,
+        "mask_parity_bias_direct": 5.350575960733052e-09,
+        "mask_parity_bias_poisson": 5.350575982148485e-09
+      },
+      {
+        "r": 8.0,
+        "R": 2.0,
+        "R2": 2.0,
+        "discrete_tv_finite_sum": 2.7617480341213137e-09,
+        "discrete_theta_bound": 1.4498301991790453e-08,
+        "continuous_tv_quadrature": 6.608204176933014e-17,
+        "continuous_theta_bound": 1.4498301991790453e-08,
+        "quadrature_refinement_change": 1.5835058115502119e-18,
+        "max_discrete_identity_relative_error": 3.4011354750503225e-15,
+        "max_continuous_identity_absolute_error": 6.661338147750939e-16,
+        "mask_parity_bias_direct": 5.350575960733052e-09,
+        "mask_parity_bias_poisson": 5.350575982148485e-09
+      },
+      {
+        "r": 8.0,
+        "R": 3.0,
+        "R2": 3.0,
+        "discrete_tv_finite_sum": 3.439718685838638e-17,
+        "discrete_theta_bound": 9.305120368569026e-19,
+        "continuous_tv_quadrature": 6.22242875492011e-17,
+        "continuous_theta_bound": 9.305120368569026e-19,
+        "quadrature_refinement_change": 4.693598412984324e-19,
+        "max_discrete_identity_relative_error": 3.4563485390084662e-15,
+        "max_continuous_identity_absolute_error": 2.220446049250313e-16,
+        "mask_parity_bias_direct": 2.4234703657024202e-17,
+        "mask_parity_bias_poisson": 1.0294700368992731e-19
+      }
+    ]
+  }
+}
