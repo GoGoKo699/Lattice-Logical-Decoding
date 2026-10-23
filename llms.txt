@@ -1,0 +1,35 @@
+# Lattice Logical Decoding
+
+This repository establishes an ideal-model separation between geometric recovery and efficient logical decoding of random GKP codes, conditional on an explicit quantum-LWE assumption. Read the scientific result directly; no development history is needed.
+
+## Start here
+
+- README.md: principal results, direct reading routes, reproduction and scope.
+- science/index.md: map of the complete scientific account and proof dependencies.
+- science/interpretation.md: physical meaning, charged resources, average-case interpretation and finite-energy/coherent-recovery boundaries.
+
+## Match the question to its authority
+
+- What is the code, and what does a decoder receive? Read science/model.md.
+- What exactly is assumed about LWE? Read science/model.md and references/RELATED_WORK.md; preserve the point-mass discrete-Gaussian convention and matched noise family.
+- Why is the same public ensemble geometrically recoverable? Read science/geometry.md, G1–G5.
+- How does independent continuous Gaussian noise arise? Read science/gaussian_smoothing.md.
+- Why does a logical class reveal a hidden parity despite stabilizer degeneracy? Read science/hardness.md.
+- Why is the entire frame hidden, including the momentum sector? Read the dual construction and hybrid proof in science/hardness.md.
+- Can the input hide unlimited numerical precision? Read science/finite_precision.md; geometry.md G5 gives the finite-precision unrestricted benchmark.
+- What can be inferred about individual bits, lists and postselection? Read the consequences in science/hardness.md.
+- How does this compare with existing GKP and stabilizer-decoding work? Read references/RELATED_WORK.md and references/references.bib.
+- How can a reader build the prerequisites? Follow learning/MILESTONES.md in dependency order.
+- What finite checks were performed, and how can they be reproduced? Read verification/README.md and run verification/run_all.py. Use verification/expected_results.json as a reference, respecting numerical tolerances.
+
+## Essential scientific distinctions
+
+The code ensemble uses m=2n oscillator modes, odd prime q=Theta(n^2), a uniform full-rank public A, L=q^(-1/2)(im A+q Z^m), Gamma=sqrt(2)(L direct-sum L*) and K=Gamma-perp=(L direct-sum L*)/sqrt(2). Logical frames live in K/(2K).
+
+At sigma_n=n^(-1/4), an unrestricted decoder succeeds with probability 1-exp(-Omega(n)) and the full 2m-bit frame is computationally pseudorandom under the specified quantum-LWE assumption. The LWE error width satisfies r_n^2=(2q sigma_n^2-2 log^2 n)/4 in the exp(-k^2/(2r_n^2)) mass convention. The general schedule sigma_n=n^(-a), 0<a<1/2, uses its corresponding assumption family.
+
+Distinguish the logical class from a full closest point, statistical closeness from computational indistinguishability, and unrestricted decoding from efficient decoding. The claims are averaged over code and physical noise. Polynomial preprocessing is charged; arbitrary free code-dependent trapdoors are not allowed.
+
+The algorithm receives a finite classical syndrome and outputs a classical frame; it may compute quantum mechanically. This is an ideal GKP result, not a finite-energy physical memory theorem or a bound on every coherent recovery channel. No QRAM is assumed. A logarithmic syndrome precision suffices for the geometric benchmark, while the hardness reduction supports every polynomially bounded precision.
+
+The finite verification suite checks identities and examples. It does not prove asymptotic hardness or substitute for the analytical arguments. Keep theorem conditions, primary-source attribution and these scope boundaries when summarizing or extending the work.
