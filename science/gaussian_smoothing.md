@@ -29,17 +29,19 @@ The normalization of $`D_{\mathbb Z,t}`$ is $`Z_t=\Theta(t,0)`$. Poisson summati
 
 Consequently, uniformly for every real center $`c`$,
 
+**(S1)**
+
 ```math
 \left|\frac{\Theta(t,c)}{\sqrt{2\pi}\,t}-1\right|\le\delta(t).
-\tag{S1}
 ```
 
 Since $`\ell^2\ge1+3(\ell-1)`$ for $`\ell\ge1`$,
 
+**(S2)**
+
 ```math
 \delta(t)\le
 \frac{2e^{-2\pi^2t^2}}{1-e^{-6\pi^2t^2}}.
-\tag{S2}
 ```
 
 The estimates below use only (S1) and elementary completion of the square. Widths will grow with $`n`$, so all denominators containing $`1-\delta(t)`$ are positive for sufficiently large $`n`$.
@@ -56,12 +58,13 @@ v_0^2=\frac{r^2R^2}{s^2}.
 
 If $`\delta(v_0)<1`$, then
 
+**(S3)**
+
 ```math
 \mathrm{TV}(2E+U,D_{\mathbb Z,s})
 \le\eta_0,
 \qquad
 \eta_0=\frac{2\delta(v_0)}{1-\delta(v_0)}.
-\tag{S3}
 ```
 
 **Proof.** For every $`z\in\mathbb Z`$, complete the square in the convolution sum:
@@ -92,11 +95,12 @@ v_1^2=\frac{s^2R_2^2}{T^2}.
 
 If $`\delta(s)<1`$, then
 
+**(S4)**
+
 ```math
 \mathrm{TV}(V+G,N(0,T^2))\le\eta_1,
 \qquad
 \eta_1=\frac{\delta(v_1)+\delta(s)}{1-\delta(s)}.
-\tag{S4}
 ```
 
 **Proof.** If $`f`$ is the density of $`V+G`$ and $`\phi_T`$ is the density of $`N(0,T^2)`$, a second completion of the square gives
@@ -114,10 +118,11 @@ By (S1), the absolute difference of this ratio from one is at most the right-han
 
 Convolution with an independent random variable cannot increase total variation. Combining Lemmas S1 and S2 therefore gives
 
+**(S5)**
+
 ```math
 \mathrm{TV}(2E+U+G,N(0,4r^2+R^2+R_2^2))
 \le\eta_0+\eta_1.
-\tag{S5}
 ```
 
 This comparison is between continuous laws after adding $`G`$. A finitely supported numerical sampler is never claimed to be close in total variation to an unrounded continuous Gaussian. [Finite precision](finite_precision.md) instead couples their finite digital outputs.
@@ -126,19 +131,21 @@ This comparison is between continuous laws after adding $`G`$. A finitely suppor
 
 **Lemma S3.** For $`U\sim D_{\mathbb Z,R}`$, let $`\beta_R=|\mathbb E[(-1)^U]|`$. Then
 
+**(S6)**
+
 ```math
 \beta_R
 \le\frac{2e^{-\pi^2R^2/2}}{1-e^{-4\pi^2R^2}}.
-\tag{S6}
 ```
 
 For $`m`$ independent copies $`U_1,\ldots,U_m`$, their parity vector $`\bar U\in\mathbb F_2^m`$ satisfies
+
+**(S7)**
 
 ```math
 \mathrm{TV}(\bar U,\mathcal U_m)\le\frac{m\beta_R}{2},
 \qquad
 \max_u\Pr[\bar U=u]\le\left(\frac{1+\beta_R}{2}\right)^m,
-\tag{S7}
 ```
 
 where $`\mathcal U_m`$ denotes the uniform law on $`m`$ bits.
@@ -178,18 +185,20 @@ Then
 
 satisfies
 
+**(S8)**
+
 ```math
 \mathrm{TV}\bigl(\Xi,N(0,\sigma_n^2I_{2m})\bigr)
 \le\eta_n:=m(\eta_0+\eta_1),
-\tag{S8}
 ```
 
 with $`\eta_0,\eta_1`$ as in (S3)–(S4). Also
 
+**(S9)**
+
 ```math
 \mathrm{TV}(\bar U,\mathcal U_m)
 \le\kappa_n:=\frac{m\beta_R}{2}.
-\tag{S9}
 ```
 
 Both $`\eta_n`$ and $`\kappa_n`$ are negligible functions of $`n`$; more precisely, each is at most $`n\exp[-\Omega((\log n)^2)]`$.

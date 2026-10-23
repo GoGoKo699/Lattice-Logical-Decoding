@@ -34,10 +34,11 @@ G_A^{-1}=\begin{pmatrix}I/q&B^T/q\\0&I\end{pmatrix}P.
 
 It follows that the single bound
 
+**(F1)**
+
 ```math
 \|\mathcal B_A\|,\|\mathcal B_A^{-1}\|
 \le M_n:=3n\sqrt q
-\tag{F1}
 ```
 
 holds for every public code in the ensemble. These are worst-case bounds over the full-rank public matrices; they do not assume that the code satisfies the distance guarantee in [geometry](geometry.md).
@@ -48,21 +49,23 @@ Finite-field elimination, row selection, and the integer and rational matrices a
 
 Let $`d=2m`$, draw $`\xi\sim N(0,\sigma_n^2I_d)`$, and put $`a=\mathcal B_A^{-1}\xi`$. The coordinates of $`a`$ need not be independent. Each individual coordinate is nevertheless a centered Gaussian with standard deviation
 
+**(F2)**
+
 ```math
 \tau_i=\sigma_n\|\text{row}_i(\mathcal B_A^{-1})\|,
 \qquad
 \frac{\sigma_n}{M_n}\le\tau_i\le\sigma_nM_n.
-\tag{F2}
 ```
 
 The lower bound follows from the smallest singular value of $`\mathcal B_A^{-1}`$, which is $`1/\|\mathcal B_A\|`$.
 
 **Lemma F1: a periodic density bound.** If $`X\sim N(0,\tau^2)`$, its density modulo one is bounded by
 
+**(F3)**
+
 ```math
 \sup_{x\in[0,1)}\sum_{k\in\mathbb Z}\phi_\tau(x+k)
 \le1+\frac1{\sqrt{2\pi}\tau},
-\tag{F3}
 ```
 
 where $`\phi_\tau`$ is its ordinary real density.
@@ -92,20 +95,22 @@ F_n=1+\frac{M_n}{\sqrt{2\pi}\sigma_n}.
 
 For any $`0<\rho<2^{-(b+1)}`$, each coordinate is within $`\rho`$ of a grid boundary with probability at most $`2^{b+1}\rho F_n`$. There are $`2^b`$ boundaries per unit period and each contributes an interval of length at most $`2\rho`$. A union bound, with no independence assumption, yields
 
+**(F4)**
+
 ```math
 \Pr\!\left[\min_{1\le i\le2m}
 \mathrm{dist}(a_i,2^{-b}\mathbb Z)\le\rho\right]
 \le 2m\,2^{b+1}\rho F_n.
-\tag{F4}
 ```
 
 This estimate is uniform in $`A`$. For the power-law and constant schedules in the theorem, $`F_n`$ is polynomial in $`n`$.
 
 For example, choose any positive dyadic $`\rho`$ no larger than
 
+**(F5)**
+
 ```math
 \frac{2^{-(b+n+4)}}{mF_n}.
-\tag{F5}
 ```
 
 Then (F4) is at most $`2^{-n-2}`$. An efficiently computed polynomial upper bound on $`F_n`$ suffices to choose such a dyadic number; the algorithm does not need exact access to $`F_n`$. The number of bits needed to specify $`\rho`$ is
@@ -122,10 +127,11 @@ If a computed approximation $`\widehat a`$ satisfies $`\|\widehat a-a\|_\infty\l
 
 and
 
+**(F6)**
+
 ```math
 \left\lfloor2^b\bigl(\widehat a-\lfloor\widehat a\rfloor\bigr)\right\rfloor
 =\left\lfloor2^b\bigl(a-\lfloor a\rfloor\bigr)\right\rfloor
-\tag{F6}
 ```
 
 hold exactly. Floor computations on the rational approximation are ordinary finite arithmetic.
@@ -162,10 +168,11 @@ t=\left((y+g)/\sqrt{2q},p\right),
 
 the coordinates to be quantized simplify to
 
+**(F7)**
+
 ```math
 \mathcal B_A^{-1}t
 =\left(H_A^{-1}(y+g),\ \sqrt{2q}\,G_A^{-1}p\right).
-\tag{F7}
 ```
 
 The momentum-sector target has the analogous formula with the sectors interchanged. The finite vector $`y`$ has entries in $`\{0,\ldots,q-1\}`$. By (F1), approximating the Gaussian draws and arithmetic to a polynomial factor more precision than $`\rho`$ ensures that (F7) is computed within $`\rho/2`$ in every coordinate, except with negligible sampling probability. The needed working precision is polynomial in $`n`$ and $`b`$; one may take $`b+O(n+\log(nq)+|\log\sigma_n|)`$ fractional bits with sufficiently large fixed constants.
@@ -200,9 +207,10 @@ Translation by an integer preserves distances to $`2^{-b}\mathbb Z`$, the torus 
 
 Couple $`\Xi`$ to a physical Gaussian $`\xi`$ that remains independent of $`A`$, so that $`\Xi=\xi`$ except with probability at most $`\eta_n`$; this is possible by the total-variation estimate in Theorem S4, uniformly in the independent public code. On equality, the boundary bound (F4) applies to the target through the integer translation above. Combine this coupling with the numerical couplings from Section 3. Outside an event of probability at most
 
+**(F8)**
+
 ```math
 \eta_n+\mathrm{negl}(n),
-\tag{F8}
 ```
 
 the finite simulator's syndrome and computed labels agree exactly with the desired physical Gaussian transcript. The same reasoning applies to the dual momentum construction, including the independently sampled true label in the other sector.

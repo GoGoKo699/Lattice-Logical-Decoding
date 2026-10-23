@@ -34,11 +34,12 @@ The main schedule is $`\sigma_n=n^{-1/4}`$. The theorem also applies to $`\sigma
 
 **Theorem H1: full-frame pseudorandomness.** Assume quantum hardness of ordinary decisional LWE with uniform secret, $`m=2n`$ classical samples, modulus $`q`$, and independent errors $`D_{\mathbb Z,r_n}`$. Then the two classical distribution ensembles
 
+**(H1)**
+
 ```math
 \mathsf{Real}_{n,b}=(A,J,Z)
 \quad\text{and}\quad
 \mathsf{Random}_{n,b}=(A,J,U_{2m})
-\tag{H1}
 ```
 
 are computationally indistinguishable by every uniform quantum polynomial-time algorithm. Here $`U_{2m}`$ is independent and uniform in $`\mathbb F_2^{2m}`$, and the marginal law of $`(A,J)`$ is identical in the two experiments.
@@ -46,6 +47,8 @@ are computationally indistinguishable by every uniform quantum polynomial-time a
 The probability laws average over $`A`$, the physical noise, and all algorithmic randomness. Arbitrary polynomial-time preprocessing from $`A`$, including a retained polynomial-size quantum state, is allowed and counted in the total runtime. No arbitrary code-dependent auxiliary advice or trapdoor is supplied. The conclusion for a nonuniform adversary class requires the LWE assumption against that same class.
 
 More quantitatively, for every efficient test $`T`$ of (H1), there are four efficient ordinary-LWE distinguishers $`D_1,\ldots,D_4`$ and a negligible implementation term $`\nu_n`$ such that
+
+**(H2)**
 
 ```math
 \begin{aligned}
@@ -55,7 +58,6 @@ More quantitatively, for every efficient test $`T`$ of (H1), there are four effi
 \sum_{i=1}^4\mathrm{Adv}_{\mathrm{LWE}}(D_i)
 +4\eta_n+2\kappa_n+\nu_n.
 \end{aligned}
-\tag{H2}
 ```
 
 The term $`\nu_n`$ includes the negligible rank-conditioning, bounded-sampling, and numerical errors. The assumption uses the point-mass integer Gaussian defined in the model, not an unstated rounding convention. Section 6 derives exact recovery, partial recovery, lists, postselection, and changes of logical labels from this theorem.
@@ -81,11 +83,12 @@ p\sim N(0,\sigma_n^2I_m).
 
 Using canonical representatives in $`\{0,\ldots,q-1\}`$, form
 
+**(H3)**
+
 ```math
 y=(2\mathbf b+u)\bmod q,
 \qquad
 t=\left(\frac{y+g}{\sqrt{2q}},\ p\right).
-\tag{H3}
 ```
 
 Let $`k_t=\lfloor\mathcal B_A^{-1}t\rfloor`$, and compute the syndrome index of $`t`$ by the same torus quantizer used for $`\xi`$. A bar will denote reduction modulo $`2`$.
@@ -98,15 +101,18 @@ v_{\mathrm{int}}=y-(2e+u)\in\mathbb Z^m.
 
 Then $`v_{\mathrm{int}}\in\Lambda_A`$ and
 
+**(H4)**
+
 ```math
 t=\left(\frac{v_{\mathrm{int}}}{\sqrt{2q}},0\right)
 +\Xi,
 \qquad
 \Xi=\left(\frac{2e+u+g}{\sqrt{2q}},p\right).
-\tag{H4}
 ```
 
 The shift before $`\Xi`$ belongs to $`K_A`$, so $`t`$ and $`\Xi`$ have exactly the same syndrome, at every precision. Moreover, the true frame of $`\Xi`$ is computable from the reduction's known data:
+
+**(H5)**
 
 ```math
 \begin{aligned}
@@ -115,7 +121,6 @@ The shift before $`\Xi`$ belongs to $`K_A`$, so $`t`$ and $`\Xi`$ have exactly t
 \widetilde Z_P
 &=\bar k_{t,P}.
 \end{aligned}
-\tag{H5}
 ```
 
 **Proof.** Modulo $`q`$,
@@ -151,9 +156,10 @@ The independence in Lemma H3 is exact before the negligible parity bias. It is n
 
 **Proposition H4.** Under the assumed LWE hardness,
 
+**(H6)**
+
 ```math
 (A,J,Z_Q,Z_P)\ \approx_c\ (A,J,U_m,Z_P),
-\tag{H6}
 ```
 
 where $`U_m`$ is independent of all displayed physical variables.
@@ -176,9 +182,10 @@ The public ensemble is closed under taking the dual code, but its public matrice
 
 Given an ordinary LWE challenge matrix $`A_0`$ of full rank, let $`C_0=\mathrm{im}A_0`$. Compute any fixed basis matrix $`N_0`$ for $`C_0^\perp`$ over $`\mathbb F_q`$, sample $`V`$ uniformly in $`\mathrm{GL}_n(\mathbb F_q)`$, and publish
 
+**(H7)**
+
 ```math
 A=N_0V.
-\tag{H7}
 ```
 
 Since $`C_0`$ is a uniform $`n`$-dimensional subspace, its complement $`C_0^\perp`$ is a uniform $`n`$-dimensional subspace. Conditional on that subspace, multiplication by uniform $`V`$ selects a uniform ordered basis. Thus the resulting $`A`$ has exactly the public full-rank distribution in Theorem H1. The public matrix is not forced into systematic form. The basis computation in the model handles all row permutations in the original coordinates.
@@ -191,26 +198,29 @@ For this public $`A`$, the integer lattice with basis $`G_A`$ is
 
 Given the challenge value $`\mathbf b`$, use the same independent mask $`u`$, smoothing $`g`$, and Gaussian $`p`$, but put the challenge in the momentum sector:
 
+**(H8)**
+
 ```math
 y=(2\mathbf b+u)\bmod q,
 \qquad
 t=\left(p,\frac{y+g}{\sqrt{2q}}\right).
-\tag{H8}
 ```
 
 The analogues of (H5) are
 
+**(H9)**
+
 ```math
 \widetilde Z_Q=\bar k_{t,Q},\qquad
 \widetilde Z_P=\bar k_{t,P}+\bar G_A^{-1}(\bar y+\bar u).
-\tag{H9}
 ```
 
 In the LWE branch, $`y-(2e+u)`$ lies in the integer lattice with basis $`G_A`$, so these are the true labels of the smoothed error. In the uniform branch, $`y`$ is independent of $`u`$, and $`\bar G_A`$ is invertible. The same proof as Sections 2–3 therefore gives
 
+**(H10)**
+
 ```math
 (A,J,Z_Q,Z_P)\ \approx_c\ (A,J,Z_Q,U_m),
-\tag{H10}
 ```
 
 with the true position label retained and the same bound of two LWE advantages plus $`2\eta_n+\kappa_n`$ and negligible implementation error.
@@ -249,20 +259,22 @@ Every consequence below holds for the same public ensemble, Gaussian noise law, 
 
 For every allowed decoder,
 
+**(H11)**
+
 ```math
 \Pr[\widehat Z=Z]\le 2^{-2m}+\mathrm{negl}(n)
 =4^{-m}+\mathrm{negl}(n).
-\tag{H11}
 ```
 
 In the independent-uniform experiment, any output computed from $`(A,J)`$ agrees with the label with probability exactly $`2^{-2m}`$ if it is a valid frame, and with probability zero if it is an erasure. An efficient equality test transfers this bound to the physical experiment.
 
 If the decoder instead outputs a list of at most $`L(n)`$ frames, for polynomial $`L`$,
 
+**(H12)**
+
 ```math
 \Pr[Z\text{ lies in the list}]
 \le L(n)4^{-m}+\mathrm{negl}(n).
-\tag{H12}
 ```
 
 An output-size bound and an efficient list-membership test suffice; the list need not have any special structure.
@@ -271,18 +283,20 @@ An output-size bound and an efficient list-membership test suffice; the list nee
 
 Suppose an efficient procedure, using only $`A`$, $`J`$, and its own randomness, selects a rank-$`k`$ binary matrix $`M\in\mathbb F_2^{k\times2m}`$ and guesses $`MZ`$. Then
 
+**(H13)**
+
 ```math
 \Pr[\widehat W=MZ]\le2^{-k}+\mathrm{negl}(n).
-\tag{H13}
 ```
 
 Conditional on the selected matrix and the public transcript, $`MU_{2m}`$ is uniform on $`k`$ bits. In particular, any efficiently selected nonzero linear parity has prediction advantage at most negligible over $`1/2`$. The selection must not be given the unknown true frame as auxiliary input.
 
 For any efficient full bit-string prediction and any fixed $`\varepsilon>0`$, the chance of correctly predicting at least a fraction $`1/2+\varepsilon`$ of the $`2m`$ coordinates is at most
 
+**(H14)**
+
 ```math
 \exp[-4\varepsilon^2m]+\mathrm{negl}(n).
-\tag{H14}
 ```
 
 This follows by applying the corresponding Hamming-agreement test and Hoeffding's inequality to independent uniform bits. These are statements about specified logical coordinates; arbitrary nonlinear predicates can have a nonuniform baseline and are governed by the full indistinguishability statement rather than an automatic $`1/2`$ bound.
@@ -291,9 +305,10 @@ This follows by applying the corresponding Hamming-agreement test and Hoeffding'
 
 Suppose a decoder outputs an acceptance bit and a frame. Let $`h_n`$ be its acceptance probability and $`c_n`$ its conditional correctness when accepted. Because acceptance is computed from the unchanged public marginal, the acceptance probability in the independent-uniform experiment is also $`h_n`$. Therefore
 
+**(H15)**
+
 ```math
 h_nc_n\le h_n4^{-m}+\mathrm{negl}(n).
-\tag{H15}
 ```
 
 If $`h_n`$ is bounded below by an inverse polynomial, the conditional correctness is negligible. The theorem does not forbid a claim conditioned on a negligibly rare acceptance event; dividing by such an event would erase the useful computational bound.
@@ -302,9 +317,10 @@ If $`h_n`$ is bounded below by an inverse polynomial, the conditional correctnes
 
 Let $`f_{A,J}`$ be any polynomial-time computable bijection of $`\mathbb F_2^{2m}`$, specified from the public matrix and the supplied syndrome. Then
 
+**(H16)**
+
 ```math
 (A,J,f_{A,J}(Z))\ \approx_c\ (A,J,U_{2m}).
-\tag{H16}
 ```
 
 To prove this, apply the efficient map $`(A,J,z)\mapsto(A,J,f_{A,J}(z))`$ to both sides of (H1). A bijection sends a conditionally independent uniform label to the same uniform law. Computing the inverse of $`f_{A,J}`$ is not required.
